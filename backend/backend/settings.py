@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'post',
     'rest_framework',
     'corsheaders',
-    
+    'djoser',
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+
 ]
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:5173']
