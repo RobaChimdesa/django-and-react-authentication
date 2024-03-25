@@ -9,7 +9,7 @@ class CustomUserManager(BaseUserManager):
             validate_email(email)
         except ValidationError:
             raise ValueError(_("User must provide a valid email"))
-    def create_user(self,first_name,last_name,emai,password,**extra_fields):
+    def create_user(self,first_name,last_name,email,password,**extra_fields):
 
         if not first_name:
             raise ValueError(_("Users must submit a first name"))        
@@ -27,12 +27,12 @@ class CustomUserManager(BaseUserManager):
         **extra_fields  )    
         user.set_password(password)
         extra_fields.setdefault("is_stff",False)
-        extra_fields.setdeault("is_superuser",False)
+        extra_fields.setdefault("is_superuser",False)
         user.save()
         return user
     
 
-    def create_superuser(self,first_name,last_name,emai,password,**extra_fields):
+    def create_superuser(self,first_name,last_name,email,password,**extra_fields):
        
        extra_fields.setdefault("is_staff",True)
        extra_fields.setdefault("is_superuser",True)
