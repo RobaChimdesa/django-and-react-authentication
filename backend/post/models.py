@@ -14,9 +14,9 @@ from .managers import CustomUserManager
     
 
 class User(AbstractBaseUser,PermissionsMixin):
-    first_name = models.CharField(_("First Name"),max_legth=100)    
-    last_name = models.CharField(_("Last Name"),max_legth=100)
-    email= models.EmailField(_("Email Address"),max_legth=254,unique=True)
+    first_name = models.CharField(_("First Name"),max_length=100)    
+    last_name = models.CharField(_("Last Name"),max_length=100)
+    email= models.EmailField(_("Email Address"),max_length=254,unique=True)
     is_active = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
 

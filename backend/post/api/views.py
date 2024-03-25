@@ -1,10 +1,10 @@
-from rest_framework.viewsets import ModelViewSet
-from ..models import post
-from .serializers import postSerializer
+# from rest_framework.viewsets import ModelViewSet
+# from ..models import post
+# from .serializers import postSerializer
 
-class postViewSet(ModelViewSet):
-    queryset = post.objects.all()
-    serializer_class = postSerializer
+# class postViewSet(ModelViewSet):
+#     queryset = post.objects.all()
+#     serializer_class = postSerializer
 
         
 
