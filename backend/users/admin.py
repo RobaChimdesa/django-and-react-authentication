@@ -13,14 +13,14 @@ class UserAdmin(BaseUserAdmin):
   add_form = CustomUserCreationForm
   form = CustomUserChangeForm
   model = user
-  list_display = ["email", "get_short_name", "first_name", "last_name", "is_staff", "is_active"]
+  list_display = ["email",  "first_name", "last_name", "is_active"]
   list_display_links = ["email"]
-  list_filter = ["email","first_name","last_name","is_staff","is_active"]
+  list_filter = ["email","first_name","last_name","is_active"]
   search_fields = ["email","first_name","last_name"]
 
-  def get_short_name(self, obj):
-    return obj.get_short_name()
-  get_short_name_for_description = "Staff"
+  # def get_short_name(self, obj):
+  #   return obj.get_short_name()
+  # get_short_name_for_description = "Staff"
   
 
 admin.site.register(user,UserAdmin)  

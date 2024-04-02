@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,Group,Permission
 from django.utils.translation import gettext_lazy as _
 from .managers import CustomUserManager
 # Create your models here.
@@ -26,7 +26,8 @@ class user(AbstractBaseUser,PermissionsMixin):
 
    
 
-   
+    user_groups = models.ManyToManyField(Group, related_name='custom_users')
+    user_permissions = models.ManyToManyField(Permission, related_name='custom_users')
 
 
 
